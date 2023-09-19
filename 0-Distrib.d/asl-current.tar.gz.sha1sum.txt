@@ -1,0 +1,7 @@
+8bad242e17a5bd81bd3a195ce7b688fefa8c16e7  asl-current.tar.gz
+
+  [ http://john.ccac.rwth-aachen.de:8000/as/ ]
+
+  [ http://john.ccac.rwth-aachen.de:8000/as/download.html ]
+
+NOTE: this is the newer version.

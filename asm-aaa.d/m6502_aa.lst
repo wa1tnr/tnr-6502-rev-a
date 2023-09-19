@@ -1,0 +1,44 @@
+ AS V1.42 Beta [Bld 248] - Source File m6502_aa.asm - Page 1 - 09/19/2023 05:20:15 PM
+
+
+       1/       0 : A9 01               	LDA #$01
+       2/       2 : 8D 00 02            	STA $0200
+       3/       5 : A9 05               	LDA #$05
+       4/       7 : 8D 01 02            	STA $0201
+       5/       A : A9 08               	LDA #$08
+       6/       C : 8D 02 02            	STA $0202
+       7/       F :                     
+ AS V1.42 Beta [Bld 248] - Source File m6502_aa.asm - Page 2 - 09/19/2023 05:20:15 PM
+
+
+  Symbol Table (* = unused):
+  --------------------------
+
+*ARCHITECTURE :                                      "x86_64-unknown-linux" - |
+*CASESENSITIVE :                  0 - | *CONSTPI :        3.141592653589793 - |
+*DATE :                "09/19/2023" - | *FALSE :                          0 - |
+*HAS64 :                          1 - | *LISTON :                         1 - |
+*MACEXP :                         7 - | *MOMCPU :                      6502 - |
+*MOMCPUNAME :                "6502" - | *NESTMAX :                      100 - |
+*RELAXED :                        0 - | *TIME :               "05:20:15 PM" - |
+*TRUE :                           1 - | *VERSION :                     142F - |
+
+     15 symbols
+     15 unused symbols
+
+ AS V1.42 Beta [Bld 248] - Source File m6502_aa.asm - Page 3 - 09/19/2023 05:20:15 PM
+
+
+  Code Pages:
+  ----------
+
+STANDARD (0 changed characters)
+
+1 code page
+
+0.00 seconds assembly time
+
+      7 lines source file
+      1 pass
+      0 errors
+      0 warnings

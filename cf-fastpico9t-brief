@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ $# -lt 1 ]; then
+    echo "Not enough arguments"
+    echo "Use:  ./this_script.sh /dev/ttyUSB0"
+    exit 1
+fi
+
+echo "NON-STANDARD escape char is the backslash, not the usual Control+A"
+echo "Control \, Control Q to quit"
+echo "Control \, Control S to send a file from the local directory"
+echo "Tue 12 Sep 16:55:16 UTC 2023"
+echo "    for AC1 Apple 1 6502 board - nano 328p"
+
+export LINE_DELAY=1100
+export CHAR_DELAY=88
+# picocom -e \\ -f n -p n -d 8 -b 38400 --omap lfcr --send-cmd "${HOME}/bin/ascii-xfr -s -l 1100 -c  88" ${1}
+#  caution - may not be current revision - blind commit 19 Sep 2023
+picocom -e \\ -f n -p n -d 8 -b 38400 --omap lfcr \
+    --send-cmd "${HOME}/bin/ascii-xfr -s \
+        -l ${LINE_DELAY} -c ${CHAR_DELAY}" ${1}
+exit 0
+
+# end

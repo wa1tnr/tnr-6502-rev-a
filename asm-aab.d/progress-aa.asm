@@ -52,7 +52,7 @@ LOOP
           STA $405
           LDA $404
           CMP $405  ; compare acc w '~'
-          BEQ SKIP
+          BCS SKIP  ; promising match
 
           TAX
           JSR OUTCH ;  A > DSP
@@ -87,6 +87,9 @@ LOOPD     DEX
 ; end.
 
 ; seems to filter out JUST 'z' now  .. nice unintended lesson. ;)
+; next:
+;   wow.  Truncated all output past the 'z'
+;    (which also does not appear)
 
 0300: 4C 31 03 A9 8D 20 EF FF
 0308: A9 8D 20 EF FF A9 20 20
@@ -97,12 +100,11 @@ LOOPD     DEX
 0330: 60 A9 2F 8D 00 04 A9 3B
 0338: 8D 01 04 20 03 03 A9 52
 0340: 8D 04 04 A9 7A 8D 05 04
-0348: AD 04 04 CD 05 04 F0 13
+0348: AD 04 04 CD 05 04 B0 13
 0350: AA 20 EF FF 8E 02 04 8C
 0358: 03 04 20 6B 03 AE 02 04
 0360: AC 03 04 E8 8A 4C 40 03
 0368: 4C 31 03 A0 C7 A2 D9 CA
 0370: D0 FD 88 D0 FA 60 EA EA
 0378: EA
-
 

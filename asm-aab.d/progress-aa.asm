@@ -1,8 +1,7 @@
-; 21:30:52z -  ONLINE edit
+; 21:42:56z -  ONLINE edit
 
 ; wed 20 sep 2023
 
-; filters just 'z'
 
           * = $0300
 
@@ -46,13 +45,27 @@ REDO      LDA #$2F  ;  K > A
 
           LDA #$52  ;  'R'
 
+
+
 LOOP
           STA $404
+
+
           LDA #$7A  ; 7E is '~'
           STA $405
+
+
           LDA $404
           CMP $405  ; compare acc w '~'
           BCS SKIP  ; promising match
+
+
+          LDA #$1F  ; one below a space
+          STA $405
+
+          LDA $404
+          CMP $405
+          BCC SKIP  ; less than only
 
           TAX
           JSR OUTCH ;  A > DSP
@@ -91,6 +104,8 @@ LOOPD     DEX
 ;   wow.  Truncated all output past the 'z'
 ;    (which also does not appear)
 
+; w00t.  Truncates both ends of the enumeration of characters.
+
 0300: 4C 31 03 A9 8D 20 EF FF
 0308: A9 8D 20 EF FF A9 20 20
 0310: EF FF A9 20 20 EF FF A9
@@ -100,11 +115,12 @@ LOOPD     DEX
 0330: 60 A9 2F 8D 00 04 A9 3B
 0338: 8D 01 04 20 03 03 A9 52
 0340: 8D 04 04 A9 7A 8D 05 04
-0348: AD 04 04 CD 05 04 B0 13
-0350: AA 20 EF FF 8E 02 04 8C
-0358: 03 04 20 6B 03 AE 02 04
-0360: AC 03 04 E8 8A 4C 40 03
-0368: 4C 31 03 A0 C7 A2 D9 CA
-0370: D0 FD 88 D0 FA 60 EA EA
-0378: EA
+0348: AD 04 04 CD 05 04 B0 20
+0350: A9 1F 8D 05 04 AD 04 04
+0358: CD 05 04 90 13 AA 20 EF
+0360: FF 8E 02 04 8C 03 04 20
+0368: 78 03 AE 02 04 AC 03 04
+0370: E8 8A 4C 40 03 4C 31 03
+0378: A0 C7 A2 D9 CA D0 FD 88
+0380: D0 FA 60 EA EA EA
 

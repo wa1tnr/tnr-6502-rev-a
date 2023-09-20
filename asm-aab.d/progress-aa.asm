@@ -1,17 +1,14 @@
-; Wed 20 Sep 16:28:06 UTC 2023
-; prints backwards up the screen!
 
           * = $0300
 
 OUTCH       = $FFEF
 
-REDO      LDA #$20
-          STA $3F
-          LDA #$00
+REDO      LDA #$2F  ;  K > A
+          STA $400  ;  A > M
 
 LOOP      TAX
           JSR OUTCH
-          JSR DELAY
+;         JSR DELAY
           INX
           TXA
           JMP LOOP
@@ -31,9 +28,9 @@ LOOPD     DEX
           JMP DELAY
          .END
 
-; 0300: A9 20 85 3F A9 00 AA 20
-; 0308: EF FF 20 15 03 E8 8A 4C
-; 0310: 06 03 4C 00 03 A0 07 A2
-; 0318: 07 60 CA D0 FD 88 D0 FA
-; 0320: 60 4C 00 03 4C 15 03
+0300: A9 2F 8D 00 04 AA 20 EF
+0308: FF E8 8A 4C 05 03 4C 00
+0310: 03 A0 07 A2 07 60 CA D0
+0318: FD 88 D0 FA 60 4C 00 03
+0320: 4C 11 03
 

@@ -1,4 +1,4 @@
-; 18:28:22z - OFFLINE edit
+; 18:45:31z - OFFLINE edit
 
 ; wed 20 sep 2023
 
@@ -36,7 +36,7 @@ REDO      LDA #$2F  ;  K > A
 
           JSR PREPRINT
 
-          LDA #$41  ;  'Q'
+          LDA #$52  ;  'R'
 
 LOOP      TAX
           JSR OUTCH ;  A > DSP
@@ -45,7 +45,7 @@ LOOP      TAX
           JSR DELAY
           LDX $402  ;  M > X
           LDY $403  ;  M > Y
-          ; INX
+          INX       ; curious which char this wraps to
           TXA
           JMP LOOP
 
